@@ -28,7 +28,7 @@ static string Name()
 
     return name;
 }
-void Menu(string)
+void Menu()
 {
     bool isRunning = true;
 
@@ -110,7 +110,7 @@ void Menu(string)
         }
     }
 }
-void Addition(string)
+void Addition()
 {
     Console.WriteLine("Selected Addition\n");
     Console.WriteLine("Choose difficulty:\n1 - Easy (1-10)\n2 - Medium (1-50)\n3 - Hard (1-100)");
@@ -174,7 +174,7 @@ void Addition(string)
         }
     }
 }
-void Subtraction(string)
+void Subtraction()
 {
     Console.WriteLine("Selected Subtraction\n");
     Console.WriteLine("Choose difficulty:\n1 - Easy (1-10)\n2 - Medium (1-50)\n3 - Hard (1-100)");
@@ -246,7 +246,7 @@ void Subtraction(string)
 
     }
 }
-void Multiplication(string)
+void Multiplication()
 {
     Console.WriteLine("Selected Multiplication\n");
     Console.WriteLine("Choose difficulty:\n1 - Easy (1-10)\n2 - Medium (1-50)\n3 - Hard (1-100)");
@@ -311,7 +311,7 @@ void Multiplication(string)
 
     }
 }
-void Division(string)
+void Division()
 {
     Console.WriteLine("Selected Division\n");
     Console.WriteLine("Choose difficulty:\n1 - Easy (1-10)\n2 - Medium (1-50)\n3 - Hard (1-100)");
@@ -386,7 +386,7 @@ void Division(string)
 
     }
 }
-void gameHistory(string)
+void GameHistory()
 {
     Console.WriteLine("Selected Game History\n");
 

@@ -4,7 +4,7 @@ Random random = new();
 List<string> history = [];
 
 Name();
-static string Name()
+void Name()
 {
     Console.WriteLine("What's Your name?\n");
 
@@ -18,7 +18,7 @@ static string Name()
         {
             Console.Clear();
             Console.WriteLine($"Welcome {name}! Today is {DateTime.Now:D}\n");
-            return name;
+            return;
         }
 
         else

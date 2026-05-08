@@ -28,7 +28,7 @@ static string Name()
 
     return name;
 }
-void Menu()
+void Menu(string? userName)
 {
     bool isRunning = true;
 
@@ -62,19 +62,19 @@ void Menu()
         {
             case "1":
                 Console.Clear();
-                Addition("Addition");
+                Addition();
                 break;
             case "2":
                 Console.Clear();
-                Subtraction("Subtraction");
+                Subtraction();
                 break;
             case "3":
                 Console.Clear();
-                Multiplication("Multiplication");
+                Multiplication();
                 break;
             case "4":
                 Console.Clear();
-                Division("Division");
+                Division();
                 break;
             case "5":
                 Console.Clear();
@@ -84,23 +84,23 @@ void Menu()
                     switch (rolledGame)
                     {
                         case 1:
-                            Addition("Addition");
+                            Addition();
                             break;
                         case 2:
-                            Subtraction("Subtraction");
+                            Subtraction();
                             break;
                         case 3:
-                            Multiplication("Multiplication");
+                            Multiplication();
                             break;
                         case 4:
-                            Division("Division");
+                            Division();
                             break;
                     }
                 }
                 break;
             case "6":
                 Console.Clear();
-                gameHistory("Game History");
+                GameHistory();
                 break;
             case "7":
                 Console.Clear();

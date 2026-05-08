@@ -4,7 +4,7 @@ string? name = Name();
 
 List<string> history = new List<string>();
 
-Menu(name);
+Menu();
 static string Name()
 {
     Console.WriteLine("What's Your name?\n");
@@ -28,7 +28,7 @@ static string Name()
 
     return name;
 }
-void Menu(string? userName)
+void Menu()
 {
     bool isRunning = true;
 
@@ -352,14 +352,13 @@ void Division()
     {
         int SecondNumber, FirstNumber, score;
 
-        score = random.Next(2, maxNumber + 1);
-
-        int dividerLimit = maxNumber / score;
-
-        if (dividerLimit < 2)
-            dividerLimit = 2;
-
         SecondNumber = random.Next(1, maxNumber + 1);
+
+        int maxMultiplier = maxNumber / SecondNumber;
+        if (maxMultiplier < 1)
+            maxMultiplier = 1;
+
+        score = random.Next(1, maxMultiplier + 1);
 
         FirstNumber = score * SecondNumber;
 

@@ -1,10 +1,9 @@
 ﻿using System.Diagnostics;
 
-string? name = Name();
+Random random = new();
+List<string> history = [];
 
-List<string> history = new List<string>();
-
-Menu();
+Name();
 static string Name()
 {
     Console.WriteLine("What's Your name?\n");
@@ -15,19 +14,25 @@ static string Name()
     {
         name = Console.ReadLine();
 
-
         if (!string.IsNullOrWhiteSpace(name) && name.All(char.IsLetter))
         {
             Console.Clear();
             Console.WriteLine($"Welcome {name}! Today is {DateTime.Now:D}\n");
-            break;
+            return name;
         }
 
-        Console.WriteLine("Invalid input! You have to insert a name (letters only):");
+        else
+        {
+            Console.WriteLine("Invalid input! You have to insert a name (letters only):");
+        }
+
     }
 
-    return name;
 }
+
+
+
+Menu();
 void Menu()
 {
     bool isRunning = true;
@@ -78,9 +83,8 @@ void Menu()
                 break;
             case "5":
                 Console.Clear();
-                Random randomGame = new Random();
                 {
-                    int rolledGame = randomGame.Next(1, 5);
+                    int rolledGame = random.Next(1, 5);
                     switch (rolledGame)
                     {
                         case 1:
@@ -106,6 +110,11 @@ void Menu()
                 Console.Clear();
                 Environment.Exit(0);
                 break;
+
+            default:
+                Console.WriteLine("Invalid selection, please select a valid game mode!");
+                Console.ReadLine();
+                continue;
 
         }
     }
@@ -137,6 +146,7 @@ void Addition()
         default:
             Console.WriteLine("Invalid selection, defaulting to Easy Difficulty\n");
             maxNumber = 10;
+            difficultyName = "Easy";
             break;
     }
 
@@ -146,8 +156,6 @@ void Addition()
 
     for (int i = 0; i < 5; i++)
     {
-        Random random = new Random();
-
         int FirstNumber = random.Next(1, maxNumber + 1);
         int SecondNumber = random.Next(1, maxNumber + 1);
 
@@ -211,16 +219,12 @@ void Subtraction()
 
     for (int i = 0; i < 5; i++)
     {
-        Random random = new Random();
-
         int FirstNumber = random.Next(1, maxNumber + 1);
         int SecondNumber = random.Next(1, maxNumber + 1);
 
         if (SecondNumber > FirstNumber)
         {
-            int temp = FirstNumber;
-            FirstNumber = SecondNumber;
-            SecondNumber = temp;
+            (SecondNumber, FirstNumber) = (FirstNumber, SecondNumber);
         }
 
         Console.WriteLine($"What is {FirstNumber} - {SecondNumber} ?\n");
@@ -284,8 +288,6 @@ void Multiplication()
 
     for (int i = 0; i < 5; i++)
     {
-        Random random = new Random();
-
         int FirstNumber = random.Next(1, maxNumber + 1);
         int SecondNumber = random.Next(1, maxNumber + 1);
 
@@ -346,8 +348,6 @@ void Division()
     var stopwatch = Stopwatch.StartNew();
 
     int points = 0;
-    Random random = new Random();
-
     for (int i = 0; i < 5; i++)
     {
         int SecondNumber, FirstNumber, score;
